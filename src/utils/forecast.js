@@ -14,10 +14,12 @@ const forecast = (latitude, longitude, callback) => {
         } else {
             const {
                 temperature,
+                feelslike,
                 weather_descriptions,
-                precip
+                precip,
+                humidity
             } = body.current;
-            callback(undefined, `${weather_descriptions}. It is currently ${temperature} degress out. There is ${precip}% chance of rain.`, );
+            callback(undefined, `${weather_descriptions}. It is currently ${temperature} degress out. It feels like ${feelslike}. There is ${precip}% chance of rain. Humidity ${humidity}%`);
         }
     });
 }
